@@ -3,6 +3,7 @@ version: '${project.version}'
 main: pe.bazan.luis.plugins.randomtp.randomtp.RandomTP
 api-version: 1.19
 prefix: RandomTP
+depend: [ CommandAPI, Vault ]
 softdepend: [ PlaceholderAPI ]
 authors: [ 'Luis Bazán' ]
 description: Plugin for RandomTP

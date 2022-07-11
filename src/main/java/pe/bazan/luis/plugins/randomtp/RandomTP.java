@@ -4,13 +4,15 @@ import net.milkbowl.vault.economy.Economy;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.logging.Logger;
-
 public final class RandomTP extends JavaPlugin {
   private static Economy econ = null;
+  private CustomYML messages = null;
+  private CustomYML config = null;
+  private CustomYML db = null;
 
   @Override
   public void onEnable() {
+    reloadConfigs();
     // Plugin startup logic
     if (!setupEconomy() ) {
       getLogger().info("Disabled due to no Vault dependency found!");
@@ -23,6 +25,12 @@ public final class RandomTP extends JavaPlugin {
   @Override
   public void onDisable() {
     // Plugin shutdown logic
+  }
+
+  public void reloadConfigs() {
+    messages = new CustomYML("messages", this);
+    config = new CustomYML("config", this);
+    db = new CustomYML("db", this);
   }
 
   private boolean setupEconomy() {
@@ -39,5 +47,17 @@ public final class RandomTP extends JavaPlugin {
 
   public static Economy getEcon() {
     return econ;
+  }
+
+  public CustomYML getCustomConfig() {
+    return config;
+  }
+
+  public CustomYML getMessages() {
+    return messages;
+  }
+
+  public CustomYML getDb() {
+    return db;
   }
 }

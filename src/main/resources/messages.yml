@@ -1,0 +1,35 @@
+prefix: "&b&lRandomTP &f»"
+help:
+  user:
+    - "&f&m================= &6Random TP &f&m================="
+    - "&e/rtp - Teleport you to a random point."
+    - "&e/rtp help - Display this message."
+    - "&f&m============================================="
+  admin:
+    - "&f&m================= &6Random TP &f&m================="
+    - "&b&lCommands:"
+    - "&e /rtp - Teleport you to a random point within the limits set in the config."
+    - "&e /rtp [player] - Teleport player to random point."
+    - "&e /rtpadmin reload - Reload the config."
+    - "&e /rtpadmin help - Display this message."
+    - "&e /rtpadmin addpoint - Add the point to the list."
+    - "&e /rtpadmin limit <min/max> [min radius limit] - Set radius minimum and maximum."
+    - "&r"
+    - "&b&lPermissions:"
+    - "&e rtp.use - Use /rtp command for self"
+    - "&e rtp.use.others - Use /rtp command for other player"
+    - "&e rtp.cooldown.bypass - Allows you to bypass th cooldown"
+    - "&e rtp.admin.reload - Use /rtpadmin reload"
+    - "&e rtp.admin.limit - Change limit with /rtpadmin limit"
+    - "&f&m============================================="
+use:
+  success: "&eYou have been charged %s$. &aAnd you are being teleported to a random location!"
+  error: "&cYou don't have enough money. &eYou need %s$"
+use-other:
+  success: "&eYou have been charged %s$. &aAnd the player is being teleported to a random location"
+  error: "&cYou don't have enough money. &eYou need %s$"
+reload: "&aReload success!"
+add-point: "&aPoint added successfully!"
+limit:
+  success-max: "&aNow the maximum limit is %s blocks."
+  success-min: "&aNow the minimum limit is %s blocks."

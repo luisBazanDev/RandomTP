@@ -1,0 +1,15 @@
+# Limit in blocks
+limits:
+  min: 300
+  max: 2000
+
+# Cooldown for new use of the /rtp in seconds
+# set for 0 disabled
+cooldown: 60
+
+# Price for the command use (require VAULT)
+# set for 0 disabled
+price: 100
+
+# Use points from the database? (Development)
+custom-points: false

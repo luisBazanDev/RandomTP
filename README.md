@@ -1,7 +1,7 @@
 # Random TP
 RandomTP is a plugin created in order to simplify and improve the alternatives that already exist. This is a simple project and I'll try to keep it up to date regarding minecraft versions etc. Any contribution is welcome!
 
-## Licence <a href="./LICENCE.md">MIT</a>
+## Licence <a href="./LICENSE.md">MIT</a>
 
 ## Translations
 - 🇪🇸 spanish - <a href="./translations/spanish.yml">Here</a>

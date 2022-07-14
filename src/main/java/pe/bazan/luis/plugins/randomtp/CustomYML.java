@@ -20,9 +20,14 @@ public class CustomYML {
    * @param jp   -> Your plugin main instance
    */
   public CustomYML(String name, JavaPlugin jp) {
-    this.path = "plugins/" + jp.getName();
-    this.ymlfile = new File(String.valueOf(path) + File.separatorChar + name + ".yml");
-    this.fc = (FileConfiguration) YamlConfiguration.loadConfiguration(this.ymlfile);
+    if(!jp.getDataFolder().exists()) {
+      jp.getDataFolder().mkdirs();
+    }
+    this.ymlfile = new File(jp.getDataFolder(), name + ".yml");
+    if(!ymlfile.exists()) {
+      jp.saveResource(name+".yml", false);
+    }
+    this.fc = YamlConfiguration.loadConfiguration(this.ymlfile);
   }
   /**
    * @throws ClassCastException

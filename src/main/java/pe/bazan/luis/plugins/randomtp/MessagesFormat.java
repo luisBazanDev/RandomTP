@@ -35,6 +35,14 @@ public class MessagesFormat {
     sender.sendMessage(ChatColor.translateAlternateColorCodes('&', msg));
   }
 
+  public static void sendSenderWithPrefix(CommandSender sender, String field, String[] variables) {
+    String msg = plugin.getMessages().getConfigField(field);
+    for (String variable : variables) {
+      msg = msg.replaceFirst("%s", variable);
+    }
+    sender.sendMessage(ChatColor.translateAlternateColorCodes('&', getPrefix()+msg));
+  }
+
   public static void sendMultiLineSender(CommandSender sender, String field) {
     String[] lines = plugin.getMessages().getConfigField(field);
     for(String line : lines) {

@@ -17,6 +17,10 @@ public class MessagesFormat {
     return plugin.getMessages().getConfigField("prefix");
   }
 
+  public static void sendSenderWithPrefix(CommandSender sender, String field) {
+    String msg = plugin.getMessages().getConfigField(field);
+    sender.sendMessage(ChatColor.translateAlternateColorCodes('&', getPrefix()+msg));
+  }
 
   public static void sendSender(CommandSender sender, String field) {
     String msg = plugin.getMessages().getConfigField(field);

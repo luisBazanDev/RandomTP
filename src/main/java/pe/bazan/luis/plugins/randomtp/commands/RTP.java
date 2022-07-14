@@ -6,6 +6,7 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.block.Block;
+import pe.bazan.luis.plugins.randomtp.MessagesFormat;
 import pe.bazan.luis.plugins.randomtp.RandomTP;
 
 import java.util.List;
@@ -16,6 +17,8 @@ public class RTP {
   private CommandAPICommand rtp_self = new CommandAPICommand("rtp")
           .withPermission("rtp")
           .executesPlayer((sender, args) -> {
+            if(!plugin.withdrawAmount(sender, plugin.getCustomConfig().getConfigField("price"))) return;
+            MessagesFormat.sendSenderWithPrefix(sender, "use.success");
             sender.teleport(getRandomPoint(plugin));
           });
   private CommandAPICommand rtp_other = new CommandAPICommand("rtp")

@@ -55,11 +55,11 @@ public final class RandomTP extends JavaPlugin {
   public boolean withdrawAmount(CommandSender player, double amount) {
     double balance = econ.getBalance((OfflinePlayer) player);
     if(balance < amount) {
-      MessagesFormat.sendSenderWithPrefix(player, messages.getConfigField("money.error"), new String[]{String.valueOf(amount)});
+      MessagesFormat.sendSenderWithPrefix(player, "money.error", new String[]{String.valueOf(amount)});
       return false;
     }
     econ.withdrawPlayer((OfflinePlayer) player, amount);
-    MessagesFormat.sendSenderWithPrefix(player, messages.getConfigField("money.success"));
+    MessagesFormat.sendSenderWithPrefix(player, "money.success", new String[]{String.valueOf(amount)});
     return true;
   }
 

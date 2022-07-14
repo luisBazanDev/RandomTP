@@ -1,12 +1,12 @@
 prefix: "&b&lRandomTP&f» "
 help:
   user:
-    - "&f&m================= &6Random TP &f&m================="
+    - "&f&m===============&6 Random TP &f&m==============="
     - "&e/rtp - Teleport you to a random point."
     - "&e/rtp help - Display this message."
-    - "&f&m============================================="
+    - "&f&m========================================"
   admin:
-    - "&f&m================= &6Random TP &f&m================="
+    - "&f&m=================&6 Random TP &f&m================="
     - "&b&lCommands:"
     - "&e /rtp - Teleport you to a random point within the limits set in the config."
     - "&e /rtp [player] - Teleport player to random point."

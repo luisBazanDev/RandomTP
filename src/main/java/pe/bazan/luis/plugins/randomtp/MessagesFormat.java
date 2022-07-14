@@ -5,6 +5,7 @@ import org.bukkit.command.CommandSender;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.SplittableRandom;
 
 public class MessagesFormat {
   private static RandomTP plugin;
@@ -44,7 +45,7 @@ public class MessagesFormat {
   }
 
   public static void sendMultiLineSender(CommandSender sender, String field) {
-    String[] lines = plugin.getMessages().getConfigField(field);
+    List<String> lines = plugin.getMessages().getConfigField(field);
     for(String line : lines) {
       sender.sendMessage(ChatColor.translateAlternateColorCodes('&', line));
     }

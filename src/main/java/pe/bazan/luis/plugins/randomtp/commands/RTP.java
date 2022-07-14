@@ -15,8 +15,13 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 public class RTP {
   private RandomTP plugin;
+  private CommandAPICommand rtp_help = new CommandAPICommand("help")
+          .executesPlayer((sender, args) -> {
+            MessagesFormat.sendMultiLineSender(sender, "help.user");
+          });
   private CommandAPICommand rtp_self = new CommandAPICommand("rtp")
           .withPermission("rtp")
+          .withSubcommand(rtp_help)
           .executesPlayer((sender, args) -> {
             long cooldown = plugin.getCooldownManager().getCooldown(sender.getName().toLowerCase());
             if(cooldown > 0 && !sender.hasPermission("rtp.bypass.cooldown")) {

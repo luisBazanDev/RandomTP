@@ -24,6 +24,7 @@ help:
     - "&f&m============================================="
 use:
   success: "&aYou are being teleported to a random location!"
+  cooldown: "&c&lHey! &cvery fast please wait &e%s minutes and %s seconds"
 money:
   success: "&eYou have been charged %s$."
   error: "&cYou don't have enough money. &eYou need %s$"

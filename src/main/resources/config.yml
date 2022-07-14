@@ -7,7 +7,7 @@ limits:
 world_name: "world"
 
 # Cooldown for new use of the /rtp in seconds
-# set for 0 disabled
+# set for 0 disabled or permission rtp.bypass.cooldown
 cooldown: 60
 
 # Price for the command use (require VAULT)

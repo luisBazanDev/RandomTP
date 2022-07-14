@@ -9,6 +9,7 @@ import org.bukkit.block.Block;
 import pe.bazan.luis.plugins.randomtp.MessagesFormat;
 import pe.bazan.luis.plugins.randomtp.RandomTP;
 
+import java.text.DecimalFormat;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -17,6 +18,11 @@ public class RTP {
   private CommandAPICommand rtp_self = new CommandAPICommand("rtp")
           .withPermission("rtp")
           .executesPlayer((sender, args) -> {
+            long cooldown = plugin.getCooldownManager().getCooldown(sender.getName().toLowerCase());
+            if(cooldown > 0 && !sender.hasPermission("rtp.bypass.cooldown")) {
+              MessagesFormat.sendSenderWithPrefix(sender, "use.cooldown", new String[]{String.valueOf(Math.floorDiv(cooldown, 60)), String.valueOf(cooldown % 60)});
+              return;
+            }
             if(!plugin.withdrawAmount(sender, plugin.getCustomConfig().getConfigField("price"))) return;
             MessagesFormat.sendSenderWithPrefix(sender, "use.success");
             sender.teleport(getRandomPoint(plugin));

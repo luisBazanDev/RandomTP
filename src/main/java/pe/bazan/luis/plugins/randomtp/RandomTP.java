@@ -6,6 +6,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.checkerframework.checker.units.qual.C;
 import pe.bazan.luis.plugins.randomtp.commands.RTP;
 
 import java.sql.Array;
@@ -15,6 +16,7 @@ public final class RandomTP extends JavaPlugin {
   private CustomYML messages = null;
   private CustomYML config = null;
   private CustomYML db = null;
+  private CooldownManager cooldownManager;
 
   @Override
   public void onEnable() {
@@ -25,6 +27,7 @@ public final class RandomTP extends JavaPlugin {
       getServer().getPluginManager().disablePlugin(this);
       return;
     }
+    cooldownManager = new CooldownManager(this);
     MessagesFormat.setPlugin(this);
     new RTP(this);
   }
@@ -77,5 +80,9 @@ public final class RandomTP extends JavaPlugin {
 
   public CustomYML getDb() {
     return db;
+  }
+
+  public CooldownManager getCooldownManager() {
+    return cooldownManager;
   }
 }

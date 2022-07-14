@@ -1,0 +1,38 @@
+prefix: "&b&lRandomTP&f» "
+help:
+  user:
+    - "&f&m===============&6 Random TP &f&m==============="
+    - "&e/rtp - Te teletransporta a un sitio aleatorio."
+    - "&e/rtp help - Muestra este mensaje."
+    - "&f&m========================================"
+  admin:
+    - "&f&m=================&6 Random TP &f&m================="
+    - "&b&lComandos:"
+    - "&e /rtp - Teletransportarte a un punto aleatorio dentro de los límites establecidos en la configuración."
+    - "&e /rtp [player] - Teletransportar al jugador a un punto aleatorio."
+    - "&e /rtpadmin reload - Vuelve a cargar la configuración."
+    - "&e /rtpadmin help - Muestra este mensaje."
+    - "&e /rtpadmin addpoint - Agregar el punto a la lista."
+    - "&e /rtpadmin limit <min/max> [radio en bloques] - Establecer radio mínimo y máximo."
+    - "&r"
+    - "&b&lPermisos:"
+    - "&e rtp.use - Use /rtp command for self"
+    - "&e rtp.use.others - Use /rtp command for other player"
+    - "&e rtp.bypass.cooldown - Allows you to bypass th cooldown"
+    - "&e rtp.admin.reload - Use /rtpadmin reload"
+    - "&e rtp.admin.limit - Change limit with /rtpadmin limit"
+    - "&f&m============================================="
+use:
+  success: "&aEstás siendo teletransportado a una ubicación aleatoria!"
+  cooldown: "&c&lHey! &cMuy rápido por favor espera &e%s minutos y %s segundos."
+money:
+  success: "&eTe han cobrado %s$."
+  error: "&cNo tienes suficiente dinero. &eNecesitas %s$"
+use-other:
+  success: "&eYou have been charged %s$. &aAnd the player is being teleported to a random location"
+  error: "&cYou don't have enough money. &eYou need %s$"
+reload: "&aReload success!"
+add-point: "&aPoint added successfully!"
+limit:
+  success-max: "&aNow the maximum limit is %s blocks."
+  success-min: "&aNow the minimum limit is %s blocks."

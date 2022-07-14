@@ -3,6 +3,7 @@ package pe.bazan.luis.plugins.randomtp;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
+import pe.bazan.luis.plugins.randomtp.commands.RTP;
 
 public final class RandomTP extends JavaPlugin {
   private static Economy econ = null;
@@ -19,7 +20,8 @@ public final class RandomTP extends JavaPlugin {
       getServer().getPluginManager().disablePlugin(this);
       return;
     }
-    new RTPCommand(this);
+    MessagesFormat.setPlugin(this);
+    new RTP(this);
   }
 
   @Override

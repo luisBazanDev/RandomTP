@@ -3,6 +3,9 @@ limits:
   min: 300
   max: 2000
 
+# World rtp
+world_name: "world"
+
 # Cooldown for new use of the /rtp in seconds
 # set for 0 disabled
 cooldown: 60
@@ -13,3 +16,9 @@ price: 100
 
 # Use points from the database? (Development)
 custom-points: false
+
+# Blocks of the https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html
+dont-blocks:
+  - WATER
+  - LAVA
+  - GRASS

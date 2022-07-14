@@ -23,7 +23,9 @@ help:
     - "&e rtp.admin.limit - Change limit with /rtpadmin limit"
     - "&f&m============================================="
 use:
-  success: "&eYou have been charged %s$. &aAnd you are being teleported to a random location!"
+  success: "&aYou are being teleported to a random location!"
+money:
+  success: "&eYou have been charged %s$."
   error: "&cYou don't have enough money. &eYou need %s$"
 use-other:
   success: "&eYou have been charged %s$. &aAnd the player is being teleported to a random location"
